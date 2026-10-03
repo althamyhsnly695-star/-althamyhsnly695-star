@@ -2,50 +2,55 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>Hacked by Hassan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Hacked</title>
 <style>
-body{background:#000;color:#0f0;font-family:monospace;text-align:center;padding-top:10%}
-h1{color:red;font-size:45px;animation:blink 0.8s infinite}
-@keyframes blink{0%{opacity:1}50%{opacity:0.2}100%{opacity:1}}
-#bar{width:80%;height:25px;border:2px solid #0f0;margin:20px auto}
-#fill{height:100%;width:0%;background:#0f0;transition:0.1s}
-.box{border:1px solid #0f0;width:85%;margin:auto;padding:15px;background:rgba(0,255,0,0.05)}
+body { background: black; color: #00ff00; font-family: 'Courier New', monospace; text-align: center; overflow: hidden; margin:0; }
+.matrix { position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; opacity:0.2; }
+h1 { font-size: 50px; margin-top: 15%; color: red; text-shadow: 0 0 20px red; animation: blink 1s infinite; }
+@keyframes blink { 0% {opacity:1} 50% {opacity:0.3} 100% {opacity:1} }
+.box { border: 2px solid #00ff00; padding: 20px; width: 80%; margin: 20px auto; background: rgba(0,255,0,0.1); }
+button { background: red; color: white; border: none; padding: 10px 30px; font-size: 20px; cursor: pointer; margin-top:20px; }
 </style>
 </head>
 <body>
-<h1>⚠️ تنبيه أمني ⚠️</h1>
-<div class="box">
-<p>> جاري محاكاة اختبار اختراق وهمي...</p>
-<p id="text">> الاتصال...</p>
-<div id="bar"><div id="fill"></div></div>
-<p id="status">0%</p>
+<canvas class="matrix" id="matrix"></canvas>
 
-<div id="final" style="display:none">
-<h2 style="color:white">تمت المحاكاة بواسطة</h2>
-<h1 style="color:white;animation:none">حسن التهامي 🇾🇪</h1>
-<p style="color:#fff">Hassan Al-Tehami | Cybersecurity Researcher</p>
-<p style="color:yellow">⚠️ تنبيه: لم يتم نقل أي ملف، هذه صفحة مزاح تعليمية فقط 😂</p>
-<p>جهازك آمن 100%</p>
-</div>
+<h1>⚠️ تم اختراقك! ⚠️</h1>
+
+<div class="box">
+<h2>تم اختراق جهازك بنجاح من قبل</h2>
+<h2 style="color:white; font-size:35px;">حسن التهامي - Hassan Al-Tehami</h2>
+<p>🛡️ Cybersecurity Researcher From Yemen - حضرموت</p>
+<p>لا تقلق يا  عليك التواصل واتساب</p>
+<p>جهازك سليم 100% - صفحتك مخترقة   فقط</p>
+<button onclick="alert('تم سحب بيانتك وملفتك بنجاح')">اضغط للخروج</button>
 </div>
 
 <script>
-let w=0;
-let txt=document.getElementById('text');
-let fill=document.getElementById('fill');
-let st=document.getElementById('status');
-let msgs=["فحص النظام...","تشفير الاتصال...","تحميل البيانات الوهمية...","اكتملت المحاكاة!"];
-
-let inter=setInterval(()=>{
-w+=2;
-fill.style.width=w+"%";
-st.innerHTML=w+"% - "+msgs[Math.floor(w/25)];
-if(w>=100){
-clearInterval(inter);
-document.getElementById('final').style.display='block';
-txt.innerHTML="> اكتمل الاختبار الوهمي بنجاح";
+// ماتريكس
+const c = document.getElementById("matrix");
+const ctx = c.getContext("2d");
+c.height = window.innerHeight;
+c.width = window.innerWidth;
+const letters = "01";
+const fontSize = 14;
+const columns = c.width / fontSize;
+const drops = [];
+for(let x=0; x<columns; x++) drops[x]=1;
+function draw(){
+ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,c.width,c.height);
+ctx.fillStyle="#0F0";
+ctx.font=fontSize+"px arial";
+for(let i=0; i<drops.length; i++){
+const text = letters[Math.floor(Math.random()*letters.length)];
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+if(drops[i]*fontSize>c.height && Math.random()>0.975) drops[i]=0;
+drops[i]++;
 }
-},80);
+}
+setInterval(draw,35);
 </script>
 </body>
 </html>
