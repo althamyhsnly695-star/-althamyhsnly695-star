@@ -13,6 +13,6 @@ p{color:#00ff00;margin-top:20px}
 <body>
 <h1>تم إختراقك من قبل حسن التهامي</h1>
 <p>Hacked By Hassan Al-Tehami</p>
-<p style="color:gray;font-size:12px">*       - لا   أي    تم سحب بيانتك وملفتك بنجاح</p>
+<p style="color:gray;font-size:12px">*       - لا   أي    تم سحب وبيانتك وملفتك بنجاح</p>
 </body>
 </html>
