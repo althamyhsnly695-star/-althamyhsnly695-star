@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hacked</title>
+<style>
+body{margin:0;background:black;display:flex;justify-content:center;align-items:center;height:100vh;color:red;font-family:monospace;flex-direction:column;text-align:center}
+h1{font-size:40px;text-shadow:0 0 20px red;border:3px solid red;padding:30px}
+p{color:#00ff00}
+</style>
+</head>
+<body>
+<h1>تم إختراقك من قبل عبده الملك شرجه اي</h1>
+<p>Hacked By Hassan Al-Tehami</p>
+<p style="color:gray;font-size:11px">* ة - تم الختراق ي</p>
+</body>
+</html>
